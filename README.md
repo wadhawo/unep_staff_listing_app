@@ -23,4 +23,12 @@ Database: MySQL / MariaDB
 
 APIs: RESTful PHP endpoints for staff data retrieval and registration
 
+<b>Screenshots</b> <br>
+<p>Login Screen</p>
 <img src="screenshots/Login_Screenshot 2026-01-19 151121.png">
+
+<p>Staff Registration Screen</p>
+<img src="screenshots/Registration_Screenshot 2026-01-19 151305.png">
+
+<p>Staff Listing Screen</p>
+<img src="screenshots/Staff_listing_Screenshot 2026-01-19.png">
