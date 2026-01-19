@@ -22,3 +22,5 @@ Backend: PHP 8+
 Database: MySQL / MariaDB
 
 APIs: RESTful PHP endpoints for staff data retrieval and registration
+
+<img src="screenshots/Login_Screenshot 2026-01-19 151121.png">
