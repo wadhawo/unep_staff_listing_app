@@ -1,7 +1,7 @@
 # unep_staff_listing_app
 A simple web-based application to manage UNEP staff information, including registration of new staff, user login, and displaying staff details in a tabular format. Built with HTML, CSS (W3.CSS), JavaScript, PHP, and MySQL.
 
-Features
+<b>Features:</b>
 
 Staff Registration – Add new staff members with details like name, email, duty station, software expertise, and more.
 
@@ -13,7 +13,7 @@ CRUD Operations – Edit, delete, and update staff records.
 
 Responsive UI – Clean and mobile-friendly layout using W3.CSS.
 
-Technologies Used
+<b>Technologies Used</b>
 
 Frontend: HTML5, CSS (W3.CSS), JavaScript
 
