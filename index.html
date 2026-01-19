@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UNEP Staff Listing</title>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <script src="main.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <h1>UNEP Staff Listing (Personal Information)</h1>
+        
+    </header>
+    <main class="w3-container">
+        <div class="w3-container w3-right">
+            <button class="w3-button w3-blue w3-round-large" onclick="document.getElementById('regModal').style.display='block'">Add New Staff</button>
+        </div>
+
+        <table class="w3-table w3-bordered w3-striped">
+            <thead>
+                <tr class="w3-light-grey">
+                    <th>IndexNumber</th>
+                    <th>FullNames</th>
+                    <th>Email</th>
+                    <th>CurrentLocation</th>
+                    <th>HighestLevelOfEducation</th>
+                    <th>DutyStation</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody id="stafflistingtbody">
+                <!-- Staff data will be populated here by script.js -->
+            </tbody>
+        </table>
+    </main>
+
+    <div id="regModal" class="w3-modal">
+        <div class="w3-modal-content w3-card-4">
+            <header class="w3-container w3-blue">
+                <span onclick="document.getElementById('regModal').style.display='none'" class="w3-button w3-display-topright">&times;</span>
+                <h2>Add New Staff Member</h2>
+            </header>
+            <div class="w3-container">
+                
+                <form id="userRegForm">
+                    <p>
+                        <label>Index Number</label>
+                        <input class="w3-input w3-border" type="text" id="indexNumber" required>
+                    </p>
+                    <p>
+                        <label>Full Names</label>
+                        <input class="w3-input w3-border" type="text" id="fullNames" required>
+                    </p>
+                    <p>
+                        <label>Email</label>
+                        <input class="w3-input w3-border" type="email" id="email" required>
+                    </p>
+                    <p>
+                        <label>Current Location</label>
+                        <input class="w3-input w3-border" type="text" id="currentLocation" required>
+                    </p>
+                    <p>
+                        <label>Highest Level Of Education</label>
+                        <input class="w3-input w3-border" type="text" id="highestLevelOfEducation" required>
+                    </p>
+                    <p>
+                        <label>Duty Station</label>
+                        <input class="w3-input w3-border" type="text" id="dutyStation" required>
+                    </p>
+                    <p>
+                        <label>Availability For Remote Work</label>
+                        <input class="w3-input w3-border" type="text" id="availabilityForRemoteWork" required>
+                    </p>
+                    <p>
+                        <label>Software Expertise</label>
+                        <input class="w3-input w3-border" type="text" id="softwareExpertise" required>
+                    </p>
+                    <p>
+                        <label>Software Expertise Level</label>
+                        <input class="w3-input w3-border" type="text" id="softwareExpertiseLevel" required>
+                    </p>
+                    <p>
+                        <label>Language</label>
+                        <input class="w3-input w3-border" type="text" id="language" required>
+                    </p>
+                    <p>
+                        <label>Level Of Responsibility</label>
+                        <input class="w3-input w3-border" type="text" id="levelOfResponsibility" required>
+                    </p>
+                    <p>
+                        <button class="w3-button w3-blue w3-round-large" type="submit">Submit</button>
+                    </p>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div id="loginModal" class="w3-hide w3-modal w3-light-gray" style="opacity: 1;">
+                <div class="w3-modal-content w3-card-4">
+                    <header class="w3-container w3-blue">
+                        <h2>UNEP Staff Portal Login</h2>
+                    </header>
+                    <div class="w3-container">
+                        <form id="loginForm">
+                            <p>
+                                <label>Username</label>
+                                <input class="w3-input w3-border" type="text" id="username" required>
+                            </p>
+                            <p>
+                                <label>Password</label>
+                                <input class="w3-input w3-border" type="password" id="password" required>
+                            </p>
+                            <p>
+                                <button class="w3-button w3-blue w3-round-large" type="submit" onclick="document.getElementById('loginModal').style.display='none'">Login</button>
+                            </p>
+                        </form>
+                    </div>
+            </div>
+    </div>
+    <!--footer  class="w3-footer">
+        <p>&copy; 2025 UNEP</p>
+    </footer-->
+</body>
+</html>
