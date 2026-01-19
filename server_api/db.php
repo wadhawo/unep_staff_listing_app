@@ -18,3 +18,7 @@ try {
     echo json_encode(['error' => 'Database connection failed']);
     exit;
 }
+
+function generate_bcrypt_hash($pwd_string) {
+    return password_hash($pwd_string, PASSWORD_BCRYPT);
+}

@@ -29,3 +29,6 @@ CREATE TABLE staff (
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     FOREIGN KEY (created_by) REFERENCES users(id) ON DELETE SET NULL
 );
+
+-- INSERT INTIAL USER
+INSERT INTO users (username, email, password_hash) VALUES ('walter.adhawo', 'wadhawo@gmail.com', '$2a$12$WCZXPLism8EnpcZH4//eCOAxfKLpocXQ0ceNpxO5y1v9ZMF6Ixctq');

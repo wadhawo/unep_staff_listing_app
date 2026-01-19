@@ -7,7 +7,8 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!userId) {
             document.getElementById('loginModal').style.display = 'block';
         } else {
-            loadStaffData();
+            listStaff();
+            //loadStaffData();
         }
     }
 
@@ -19,7 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const password = document.getElementById('password').value;
 
         try {
-            const res = await fetch('login.php', {
+            const res = await fetch('server_api/login.php', {
                 method: 'POST',
                 headers: {'Content-Type': 'application/json'},
                 body: JSON.stringify({username, password})
@@ -47,7 +48,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Load staff table
     async function loadStaffData() {
         try {
-            const res = await fetch('staff.php');
+            const res = await fetch('server_api/staff.php');
             const staffList = await res.json();
 
             const tbody = document.querySelector('table tbody');
@@ -80,7 +81,7 @@ async function loadStaffData() {
     try {
         // Call the API
         const response = await fetch('server_api/get_staff.php');
-        if (!response.ok) throw new Error('Network response was not ok');
+        if (!response.ok) throw new Error('[Network response was not ok]:8 ' + response.statusText);
 
         const staffData = await response.json();
 
@@ -109,7 +110,7 @@ async function loadStaffData() {
 }
 
 // Call the function when the page loads
-window.addEventListener('DOMContentLoaded', listStaff);
+//window.addEventListener('DOMContentLoaded', listStaff);
 
 function listStaff() {
     if(true){
@@ -143,3 +144,28 @@ function listStaff() {
     }
 }
 
+// Add listener for loginForm submission
+const loginForm = document.getElementById('loginForm');
+loginForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const username = document.getElementById('username').value;
+    const password = document.getElementById('password').value;
+    try {
+        const res = await fetch('server_api/login.php', {
+            method: 'POST',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify({username, password})
+        });
+        const data = await res.json();
+        if (data.success) {
+            localStorage.setItem('userId', data.user_id);
+            document.getElementById('loginModal').style.display = 'none';
+            listStaff(); //loadStaffData();
+        } else {
+            alert('Invalid credentials');
+            document.location.reload();
+        }
+    } catch (err) {
+        console.error('Login error:', err);
+    }
+});
